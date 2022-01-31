@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public float Speed = 10f;
-    public float JumpForce = 1f;
+    [SerializeField] private float _speed = 10f;
+    [SerializeField] private float _jumpForce = 80f;
 
     //что бы эта переменная работала добавьте тэг "Ground" на вашу поверхность земли
     private bool _isGrounded;
@@ -26,13 +27,19 @@ public class Movement : MonoBehaviour
 
     private void MovementLogic()
     {
+        float speed = _speed;
+        if (!_isGrounded)
+        {
+            speed /= 5;
+        }
+
         float moveHorizontal = Input.GetAxis("Horizontal");
 
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        _rb.AddForce(movement * Speed);
+        _rb.AddForce(movement * speed);
     }
 
     private void JumpLogic()
@@ -41,7 +48,7 @@ public class Movement : MonoBehaviour
         {
             if (_isGrounded)
             {
-                _rb.AddForce(Vector3.up * JumpForce);
+                _rb.AddForce(Vector3.up * _jumpForce);
 
                 // Обратите внимание что я делаю на основе Vector3.up 
                 // а не на основе transform.up. Если персонаж упал или 
@@ -55,17 +62,22 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        IsGroundedUpate(collision, true);
+        IsGroundedUpdate(collision, true);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        IsGroundedUpdate(collision, true);
     }
 
     void OnCollisionExit(Collision collision)
     {
-        IsGroundedUpate(collision, false);
+        IsGroundedUpdate(collision, false);
     }
 
-    private void IsGroundedUpate(Collision collision, bool value)
+    private void IsGroundedUpdate(Collision collision, bool value)
     {
-        if (collision.gameObject.tag == ("Ground"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             _isGrounded = value;
         }
