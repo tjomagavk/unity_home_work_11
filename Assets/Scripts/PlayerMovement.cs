@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _jumpForce = 80f;
+    private Animator _playerAnimator;
+    private bool _enableMovement;
 
     //что бы эта переменная работала добавьте тэг "Ground" на вашу поверхность земли
     private bool _isGrounded;
@@ -14,15 +16,26 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        _playerAnimator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
+        _enableMovement = true;
     }
 
     // обратите внимание что все действия с физикой 
     // необходимо обрабатывать в FixedUpdate, а не в Update
     void FixedUpdate()
     {
-        MovementLogic();
-        JumpLogic();
+        if (_enableMovement)
+        {
+            MovementLogic();
+            JumpLogic();
+        }
+    }
+
+    public void StopAndDisable()
+    {
+        _enableMovement = false;
+        _rb.isKinematic = true;
     }
 
     private void MovementLogic()
@@ -30,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         float speed = _speed;
         if (!_isGrounded)
         {
-            speed /= 5;
+            speed /= 3;
         }
 
         float moveHorizontal = Input.GetAxis("Horizontal");

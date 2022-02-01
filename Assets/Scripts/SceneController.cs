@@ -5,12 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public void LoadScene(int index)
+    private static SceneController _instance;
+
+    public static SceneController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<SceneController>();
+
+                if (_instance == null)
+                {
+                    GameObject container = new GameObject("SceneController");
+                    _instance = container.AddComponent<SceneController>();
+                }
+            }
+
+            return _instance;
+        }
+    }
+
+    public static void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
     }
 
-    public void ReloadScene()
+    public static void LoadNextScene()
+    {
+        int activeScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(activeScene + 1);
+    }
+
+    public static void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

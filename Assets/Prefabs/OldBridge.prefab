@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1887307757027212976}
   - component: {fileID: 750968692811330153}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Rail_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 847347983488277971}
   - component: {fileID: 8863365124420496242}
   - component: {fileID: 4904243539150268572}
+  - component: {fileID: 8503986643920399610}
   m_Layer: 0
   m_Name: OldBridge
   m_TagString: Ground
@@ -148,6 +149,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8503986643920399610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847347983488277968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7440dd8a634144fb1c6b072516ebec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &950001313932309338
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +173,7 @@ GameObject:
   - component: {fileID: 8353703673229008959}
   - component: {fileID: 6404572030540326078}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Rail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +252,7 @@ GameObject:
   - component: {fileID: 6726460594428926050}
   - component: {fileID: 6282781520016544103}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Rail_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +331,7 @@ GameObject:
   - component: {fileID: 373632478965082024}
   - component: {fileID: 4250481636765016916}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Rail_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,7 +410,7 @@ GameObject:
   - component: {fileID: 626483783707945157}
   - component: {fileID: 2631033750537687494}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Rail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
