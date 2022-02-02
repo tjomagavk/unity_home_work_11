@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _jumpForce = 80f;
-    private Animator _playerAnimator;
     private bool _enableMovement;
 
     //что бы эта переменная работала добавьте тэг "Ground" на вашу поверхность земли
@@ -16,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        _playerAnimator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         _enableMovement = true;
     }
@@ -62,13 +60,6 @@ public class PlayerMovement : MonoBehaviour
             if (_isGrounded)
             {
                 _rb.AddForce(Vector3.up * _jumpForce);
-
-                // Обратите внимание что я делаю на основе Vector3.up 
-                // а не на основе transform.up. Если персонаж упал или 
-                // если персонаж -- шар, то его личный "верх" может 
-                // любое направление. Влево, вправо, вниз...
-                // Но нам нужен скачек только в абсолютный вверх, 
-                // потому и Vector3.up
             }
         }
     }
