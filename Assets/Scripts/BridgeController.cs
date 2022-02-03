@@ -20,9 +20,9 @@ public class BridgeController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!_isDrop)
+        if (!_isDrop && collision.gameObject.CompareTag("Player"))
         {
             _animator.SetTrigger("DropTrigger");
             _isDrop = true;
