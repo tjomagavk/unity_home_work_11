@@ -36,9 +36,11 @@ public class SoundManager : MonoBehaviour
         MusicSource.Play();
     }
 
-    public void Mute(bool mute)
+    public bool Mute()
     {
-        MusicSource.mute = mute;
+        _isMute = !_isMute;
+        MusicSource.mute = _isMute;
+        return _isMute;
     }
 
     private void PlayBackground()

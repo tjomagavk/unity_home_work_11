@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
     private static SceneController _instance;
+    private static bool _isPause;
 
     public static SceneController Instance
     {
@@ -31,6 +30,12 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+    public static void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        Play();
+    }
+
     public static void LoadNextScene()
     {
         int activeScene = SceneManager.GetActiveScene().buildIndex;
@@ -40,5 +45,27 @@ public class SceneController : MonoBehaviour
     public static void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Play();
+    }
+
+    public static void ChangePlayPause()
+    {
+        if (_isPause)
+        {
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
+
+        _isPause = !_isPause;
+    }
+
+
+    public static void Play()
+    {
+        Time.timeScale = 1f;
+        _isPause = false;
     }
 }
