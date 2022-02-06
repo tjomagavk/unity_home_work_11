@@ -21,8 +21,13 @@ namespace WildBall.Player
 
         public void StopAndDisable()
         {
-            enableMovement = true;
+            Disable();
             playerRigidbody.isKinematic = true;
+        }
+
+        public void Disable()
+        {
+            enableMovement = true;
         }
 
         public void MovementLogic(Vector3 movement)
