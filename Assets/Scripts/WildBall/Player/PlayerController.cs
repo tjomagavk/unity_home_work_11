@@ -13,6 +13,7 @@ namespace WildBall.Player
     {
         private PlayerMovement playerMovement;
         private LevelScreenController levelScreenController;
+        private bool isWin;
 
         private void Awake()
         {
@@ -26,6 +27,14 @@ namespace WildBall.Player
             levelScreenController = levelScreen.GetComponent<LevelScreenController>();
         }
 
+        private void FixedUpdate()
+        {
+            if (isWin)
+            {
+                playerMovement.MovementLogic(Vector3.up);
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(TagVars.FailTrigger))
@@ -35,15 +44,28 @@ namespace WildBall.Player
             }
             else if (other.CompareTag(TagVars.FinishTrigger))
             {
-                playerMovement.StopAndDisable();
-                SceneController.LoadNextScene();
+                WinAction();
             }
         }
+
+        private void WinAction()
+        {
+            playerMovement.Stop();
+            StartCoroutine(WinScreenTimer());
+            isWin = true;
+        }
+
 
         private IEnumerator DeathScreenTimer()
         {
             yield return new WaitForSeconds(1);
             levelScreenController.DeathActive();
+        }
+
+        private IEnumerator WinScreenTimer()
+        {
+            yield return new WaitForSeconds(1);
+            levelScreenController.WinActive();
         }
     }
 }
