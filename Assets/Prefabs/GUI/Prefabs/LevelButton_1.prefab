@@ -154,7 +154,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 70, y: 47}
+  m_CellSize: {x: 80, y: 47}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -314,9 +314,9 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c713fa9cbd77bd54aacce96caa6bd610, type: 3}
-    m_FontSize: 25
+    m_FontSize: 22
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 1
@@ -325,4 +325,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level
+  m_Text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C"

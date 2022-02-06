@@ -9,6 +9,7 @@ namespace WildBall.UI
         [SerializeField] private PauseScreen pauseScreen;
         [SerializeField] private DeathScreen deathScreen;
         [SerializeField] private WinScreen winScreen;
+        [SerializeField] private GameObject ruleScreen;
 
         private void Awake()
         {
@@ -16,6 +17,7 @@ namespace WildBall.UI
             pauseScreen.SetActive(false);
             deathScreen.SetActive(false);
             winScreen.SetActive(false);
+            ruleScreen.SetActive(true);
         }
 
         public void DeathActive()
@@ -24,6 +26,7 @@ namespace WildBall.UI
             pauseScreen.SetActive(false);
             deathScreen.SetActive(true);
             winScreen.SetActive(false);
+            ruleScreen.SetActive(false);
         }
 
         public void WinActive()
@@ -32,6 +35,7 @@ namespace WildBall.UI
             pauseScreen.SetActive(false);
             deathScreen.SetActive(false);
             winScreen.SetActive(true);
+            ruleScreen.SetActive(false);
         }
     }
 }
