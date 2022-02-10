@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using WildBall.Constants;
 
-namespace WildBall
+namespace WildBall.Mechanism
 {
     public class MechanismButton : MonoBehaviour
     {

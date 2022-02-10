@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace WildBall
+namespace WildBall.Mechanism
 {
     [RequireComponent(typeof(Animator))]
     public class Mechanism : MonoBehaviour

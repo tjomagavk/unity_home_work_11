@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 212691288337404010}
   - component: {fileID: 1670629435354349612}
+  - component: {fileID: 8344898665541768078}
+  - component: {fileID: 7743357056319994658}
   m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
@@ -52,6 +54,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &8344898665541768078
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143637839176971967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7743357056319994658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143637839176971967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb32952356646e9ba77c83083856662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1670629435354349612}
 --- !u!1 &1976147277447567959
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +300,6 @@ GameObject:
   - component: {fileID: 8493695308829674434}
   - component: {fileID: 3590178325884877688}
   - component: {fileID: 8839615466462524450}
-  - component: {fileID: 1403224268029386597}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -343,20 +370,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1403224268029386597
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507528867139367064}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.50000036
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.0000000614676, y: 0, z: 0.0000018179426}
 --- !u!1 &8832127503393840805
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +460,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8832127503393840805}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.50000024
