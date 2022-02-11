@@ -12,5 +12,15 @@ namespace WildBall.Enemy
         {
             hammerWorkArea.StartPosition();
         }
+
+        public void UpperStrike()
+        {
+            hammerWorkArea.UpperStrike();
+        }
+
+        public void NotUpperStrike()
+        {
+            hammerWorkArea.NotUpperStrike();
+        }
     }
 }
