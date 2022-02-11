@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using WildBall.GlobalController;
 
@@ -11,7 +12,6 @@ namespace WildBall.UI.Buttons
         [SerializeField] private Sprite unMuteImage;
         private Button button;
         private Image iconSound;
-        private bool muteSound;
 
         private void Awake()
         {
@@ -20,9 +20,20 @@ namespace WildBall.UI.Buttons
             button.onClick.AddListener(OnClickMute);
         }
 
+        private void Start()
+        {
+            ChangeIcon();
+        }
+
         private void OnClickMute()
         {
-            iconSound.sprite = SoundManager.Instance.Mute() ? muteImage : unMuteImage;
+            SoundManager.Instance.ChangeState();
+            ChangeIcon();
+        }
+
+        private void ChangeIcon()
+        {
+            iconSound.sprite = SoundManager.Instance.IsMute() ? muteImage : unMuteImage;
         }
     }
 }

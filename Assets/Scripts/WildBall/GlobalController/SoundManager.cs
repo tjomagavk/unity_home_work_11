@@ -4,7 +4,7 @@ namespace WildBall.GlobalController
 {
     public class SoundManager : MonoBehaviour
     {
-        private bool isMute;
+        private static bool _muteSounds;
 
         public static SoundManager Instance = null;
         public AudioSource musicSource;
@@ -38,11 +38,15 @@ namespace WildBall.GlobalController
             musicSource.Play();
         }
 
-        public bool Mute()
+        public void ChangeState()
         {
-            isMute = !isMute;
-            musicSource.mute = isMute;
-            return isMute;
+            _muteSounds = !_muteSounds;
+            musicSource.mute = _muteSounds;
+        }
+
+        public bool IsMute()
+        {
+            return _muteSounds;
         }
 
         private void PlayBackground()
