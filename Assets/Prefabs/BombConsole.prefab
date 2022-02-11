@@ -475,11 +475,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup
       objectReference: {fileID: 0}
-    - target: {fileID: 3381859997154071611, guid: 129d7650d88642e4d958f672db99cd3a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5270572068675555287, guid: 129d7650d88642e4d958f672db99cd3a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
