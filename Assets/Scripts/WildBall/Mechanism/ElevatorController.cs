@@ -25,7 +25,6 @@ namespace WildBall.Mechanism
 
         public void Move()
         {
-            Debug.Log("Pos: " + transform + pointDown + pointUp);
             if (transform.position == pointDown.position)
             {
                 StartCoroutine(MoveObject(pointDown.position, pointUp.position, timeSec));
