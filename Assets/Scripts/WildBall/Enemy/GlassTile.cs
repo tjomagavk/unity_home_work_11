@@ -2,6 +2,7 @@
 using UnityEngine;
 using WildBall.Constants;
 using WildBall.Player;
+using Zenject;
 
 namespace WildBall.Enemy
 {
@@ -11,10 +12,15 @@ namespace WildBall.Enemy
         private Rigidbody rigidbody;
         private PlayerState playerState;
 
+        [Inject]
+        private void Construct(PlayerState playerState)
+        {
+            this.playerState = playerState;
+        }
+
         public void Awake()
         {
             rigidbody = GetComponent<Rigidbody>();
-            playerState = FindObjectOfType<PlayerState>();
         }
 
         private void OnCollisionEnter(Collision other)

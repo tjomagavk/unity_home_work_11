@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using WildBall.Constants;
-
-namespace WildBall.Player
+﻿namespace WildBall.Player
 {
     public enum PlayerType
     {

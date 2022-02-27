@@ -1,7 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using WildBall.GlobalController;
+using Zenject;
 
 namespace WildBall.UI.Buttons
 {
@@ -10,8 +10,15 @@ namespace WildBall.UI.Buttons
     {
         [SerializeField] private Sprite muteImage;
         [SerializeField] private Sprite unMuteImage;
+        private SoundManager soundManager;
         private Button button;
         private Image iconSound;
+
+        [Inject]
+        private void Construct(SoundManager soundManager)
+        {
+            this.soundManager = soundManager;
+        }
 
         private void Awake()
         {
@@ -27,13 +34,13 @@ namespace WildBall.UI.Buttons
 
         private void OnClickMute()
         {
-            SoundManager.Instance.ChangeState();
+            soundManager.ChangeState();
             ChangeIcon();
         }
 
         private void ChangeIcon()
         {
-            iconSound.sprite = SoundManager.Instance.IsMute() ? muteImage : unMuteImage;
+            iconSound.sprite = soundManager.IsMute() ? muteImage : unMuteImage;
         }
     }
 }

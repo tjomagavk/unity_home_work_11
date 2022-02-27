@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using WildBall.Constants;
-using WildBall.GlobalController;
 using WildBall.UI;
 
 namespace WildBall.Player

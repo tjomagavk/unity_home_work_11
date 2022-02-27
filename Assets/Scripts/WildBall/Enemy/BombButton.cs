@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
-using UnityEditor;
 using UnityEngine;
 using WildBall.Constants;
 using WildBall.UI;
+using Zenject;
 
 namespace WildBall.Enemy
 {
     [RequireComponent(typeof(Animator))]
     public class BombButton : MonoBehaviour
     {
-        [SerializeField] private PopupScreen popup;
+        private PopupScreen popup;
         [SerializeField] private int boomRadius;
         [SerializeField] private float boomPower;
         [SerializeField] private GameObject boomPoint;
         private Animator animator;
         private bool isEnable = true;
+
+        [Inject]
+        private void Construct(PopupScreen popup)
+        {
+            this.popup = popup;
+        }
 
         private void Awake()
         {

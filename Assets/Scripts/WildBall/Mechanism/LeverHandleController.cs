@@ -1,16 +1,22 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using WildBall.Constants;
 using WildBall.UI;
+using Zenject;
 
 namespace WildBall.Mechanism
 {
     public class LeverHandleController : MonoBehaviour
     {
         [SerializeField] private Animator animator;
-        [SerializeField] private PopupScreen popup;
+        private PopupScreen popup;
         private bool upPosition;
         public bool UpPosition => upPosition;
+
+        [Inject]
+        private void Construct(PopupScreen popup)
+        {
+            this.popup = popup;
+        }
 
         private void Start()
         {
