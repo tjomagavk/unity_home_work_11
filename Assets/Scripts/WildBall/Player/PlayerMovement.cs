@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using WildBall.Constants;
+using Zenject;
 
 namespace WildBall.Player
 {
@@ -13,6 +14,14 @@ namespace WildBall.Player
         private bool enableMovement;
         private Rigidbody playerRigidbody;
 
+        private PlayerState playerState;
+
+        [Inject]
+        private void Construct(PlayerState playerState)
+        {
+            this.playerState = playerState;
+        }
+
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody>();
@@ -24,6 +33,7 @@ namespace WildBall.Player
             playerRigidbody.velocity = Vector3.zero;
             playerRigidbody.angularVelocity = Vector3.zero;
             playerRigidbody.useGravity = false;
+            Disable();
         }
 
         public void Disable()
@@ -35,7 +45,7 @@ namespace WildBall.Player
         {
             if (IsEnableMovement())
             {
-                float speed = this.speed;
+                float speed = this.speed * playerState.MoveScale();
                 if (!isGrounded)
                 {
                     speed /= 3;
@@ -45,11 +55,16 @@ namespace WildBall.Player
             }
         }
 
+        public void MovementIgnoreDisable(Vector3 movement)
+        {
+            playerRigidbody.AddForce(movement);
+        }
+
         public void JumpLogic()
         {
             if (IsEnableMovement() && isGrounded)
             {
-                playerRigidbody.AddForce(Vector3.up * jumpForce);
+                playerRigidbody.AddForce(Vector3.up * jumpForce * playerState.MoveScale());
             }
         }
 

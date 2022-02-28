@@ -8,6 +8,7 @@ TagManager:
   - FailTrigger
   - FinishTrigger
   - LevelScreen
+  - Fire
   layers:
   - Default
   - TransparentFX

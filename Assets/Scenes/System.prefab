@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &418031266759331537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6348787807315683933}
+  - component: {fileID: 1084745175341393775}
+  m_Layer: 0
+  m_Name: WinInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6348787807315683933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418031266759331537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6710641965536334445}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1084745175341393775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418031266759331537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541cca3588548b2b44d87de3b6c7576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredKeysCount: 0
 --- !u!1 &6710641965536334444
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,6 +73,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6710641966814719922}
+  - {fileID: 6348787807315683933}
   m_Father: {fileID: 6710641966928958090}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,6 +92,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 6710641966814719923}
+  - {fileID: 1084745175341393775}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -108,6 +154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 0
+  playerObject: {fileID: 0}
+  paperPrefab: {fileID: 8751111166987736831, guid: cf32a826dd3d47e46b374fd222b4b0a7,
+    type: 3}
+  woodPrefab: {fileID: 7431459817167027646, guid: dda079942b030eb4e8c0502eb16db840,
+    type: 3}
 --- !u!1 &6710641966928958089
 GameObject:
   m_ObjectHideFlags: 0

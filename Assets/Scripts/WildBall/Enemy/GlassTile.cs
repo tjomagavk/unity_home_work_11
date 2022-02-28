@@ -9,7 +9,7 @@ namespace WildBall.Enemy
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
     public class GlassTile : MonoBehaviour
     {
-        private Rigidbody rigidbody;
+        private Rigidbody rb;
         private PlayerState playerState;
 
         [Inject]
@@ -20,7 +20,7 @@ namespace WildBall.Enemy
 
         public void Awake()
         {
-            rigidbody = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody>();
         }
 
         private void OnCollisionEnter(Collision other)
@@ -31,9 +31,12 @@ namespace WildBall.Enemy
                 {
                     StartCoroutine(Crack(.1f));
                 }
+                else if (PlayerType.PAPER == playerState.PlayerType())
+                {
+                }
                 else
                 {
-                    StartCoroutine(Crack(.1f));
+                    StartCoroutine(Crack(0));
                 }
             }
         }
@@ -41,8 +44,8 @@ namespace WildBall.Enemy
         private IEnumerator Crack(float seconds)
         {
             yield return new WaitForSeconds(seconds);
-            rigidbody.isKinematic = false;
-            rigidbody.useGravity = true;
+            rb.isKinematic = false;
+            rb.useGravity = true;
         }
     }
 }

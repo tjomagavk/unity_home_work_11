@@ -1073,6 +1073,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90e0ba983b9cef54090a524e9f9c4f83, type: 3}
+--- !u!1 &191007270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2608666374790507213, guid: 90e0ba983b9cef54090a524e9f9c4f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 191007269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &191007271 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8303411658897620191, guid: 90e0ba983b9cef54090a524e9f9c4f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 191007269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &191007272 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 950234194375123147, guid: 90e0ba983b9cef54090a524e9f9c4f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 191007269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &216996898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12767,6 +12785,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6710641966814719923, guid: 5ab783944bd96ff4fb695caf444b3a1a,
+        type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 191007270}
+    - target: {fileID: 6710641966814719923, guid: 5ab783944bd96ff4fb695caf444b3a1a,
+        type: 3}
+      propertyPath: playerFireParticleSystem
+      value: 
+      objectReference: {fileID: 191007271}
+    - target: {fileID: 6710641966814719923, guid: 5ab783944bd96ff4fb695caf444b3a1a,
+        type: 3}
+      propertyPath: playerBurnedParticleSystem
+      value: 
+      objectReference: {fileID: 191007272}
     - target: {fileID: 6710641966928958089, guid: 5ab783944bd96ff4fb695caf444b3a1a,
         type: 3}
       propertyPath: m_Name
