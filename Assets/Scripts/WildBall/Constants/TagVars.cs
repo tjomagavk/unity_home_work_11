@@ -8,5 +8,6 @@
         public const string LevelScreen = "LevelScreen";
         public const string FailTrigger = "FailTrigger";
         public const string FinishTrigger = "FinishTrigger";
+        public const string MovingPlatformWall = "MovingPlatformWall";
     }
 }

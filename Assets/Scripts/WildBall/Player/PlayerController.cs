@@ -109,6 +109,10 @@ namespace WildBall.Player
             playerMovement.Stop();
             StartCoroutine(WinScreenTimer());
             isWin = true;
+            if (winManager.IsLastLevel())
+            {
+                winManager.RunRocket();
+            }
         }
 
 
@@ -121,7 +125,14 @@ namespace WildBall.Player
         private IEnumerator WinScreenTimer()
         {
             yield return new WaitForSeconds(1);
-            levelScreenController.WinActive();
+            if (winManager.IsLastLevel())
+            {
+                levelScreenController.FinalWinActive();
+            }
+            else
+            {
+                levelScreenController.WinActive();
+            }
         }
     }
 }

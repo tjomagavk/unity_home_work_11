@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46611726, g: 0.46580702, b: 0.46192324, a: 1}
+  m_IndirectSpecularColor: {r: 0.24387854, g: 0.24981907, b: 0.2522115, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7539,7 +7539,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcec2358af7609e4893b7a50c6d39bef, type: 2}
+  - {fileID: 2100000, guid: bbdeb7f26e4219c41868068a00a52dbd, type: 2}
   - {fileID: 2100000, guid: 8a630897c2a81c94990c63148547a9fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -12180,6 +12180,11 @@ PrefabInstance:
     - target: {fileID: 8270792124031543139, guid: d0f644238267017419d5fce5aeb5c27c,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270792124147015648, guid: d0f644238267017419d5fce5aeb5c27c,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8343257189687883509, guid: d0f644238267017419d5fce5aeb5c27c,

@@ -9,6 +9,7 @@ TagManager:
   - FinishTrigger
   - LevelScreen
   - Fire
+  - MovingPlatformWall
   layers:
   - Default
   - TransparentFX

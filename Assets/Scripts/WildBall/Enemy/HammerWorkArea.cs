@@ -28,11 +28,7 @@ namespace WildBall.Enemy
         {
             if (other.CompareTag(TagVars.Player))
             {
-                if (upperStrike)
-                {
-                    other.GetComponent<Animator>().SetTrigger("FlatDeath");
-                }
-                else
+                if (!upperStrike)
                 {
                     Vector3 vector3 = startPosition - gameObject.transform.position;
                     vector3.x = -vector3.x;
